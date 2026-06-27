@@ -8,8 +8,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"uploadBroker/internal/metadata"
-	"uploadBroker/internal/storage"
+	"github.com/doc-war/uploadbroker/internal/metadata"
+	"github.com/doc-war/uploadbroker/internal/storage"
 )
 
 var errStorageDown = errors.New("storage is down")

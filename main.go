@@ -11,11 +11,11 @@ import (
 	"runtime/debug"
 	"syscall"
 
-	"uploadBroker/internal/api"
-	"uploadBroker/internal/cleanup"
-	"uploadBroker/internal/config"
-	"uploadBroker/internal/metadata"
-	"uploadBroker/internal/storage"
+	"github.com/doc-war/uploadbroker/internal/api"
+	"github.com/doc-war/uploadbroker/internal/cleanup"
+	"github.com/doc-war/uploadbroker/internal/config"
+	"github.com/doc-war/uploadbroker/internal/metadata"
+	"github.com/doc-war/uploadbroker/internal/storage"
 )
 
 const (

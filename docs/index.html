@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UploadBroker — 轻量级 AI 临时文件资源代理 | Lightweight Resource Broker for AI</title>
-<meta name="description" content="UploadBroker：专为 AI 推理平台设计的临时文件资源代理网关。单二进制部署，多存储后端（Local/S3/OSS/R2），魔数检测防伪装，URL 签名保护，TTL 自动清理。它就是临时存储界的 Redis。">
-<meta name="keywords" content="UploadBroker,AI 临时文件,资源代理,文件上传网关,MinIO 替代,S3 网关,TTL 文件管理,AI 推理">
+<meta name="description" content="uploadbroker：专为 AI 推理平台设计的临时文件资源代理网关。单二进制部署，多存储后端（Local/S3/OSS/R2），魔数检测防伪装，URL 签名保护，TTL 自动清理。它就是临时存储界的 Redis。">
+<meta name="keywords" content="uploadbroker,AI 临时文件,资源代理,文件上传网关,MinIO 替代,S3 网关,TTL 文件管理,AI 推理">
 <meta property="og:type" content="website">
-<meta property="og:title" content="UploadBroker — 轻量级 AI 临时文件资源代理">
+<meta property="og:title" content="uploadbroker — 轻量级 AI 临时文件资源代理">
 <meta property="og:description" content="专为 AI 推理平台设计的临时文件资源代理网关。单二进制部署，多存储后端，魔数检测，URL 签名，TTL 自动清理。">
-<meta property="og:url" content="https://doc-war.com/UploadBroker">
+<meta property="og:url" content="https://doc-war.com/uploadbroker">
 <meta property="og:image" content="https://doc-war.com/img/logo.png">
 <meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="UploadBroker — 轻量级 AI 临时文件资源代理">
+<meta name="twitter:title" content="uploadbroker — 轻量级 AI 临时文件资源代理">
 <meta name="twitter:description" content="专为 AI 推理平台设计的临时文件资源代理网关。单二进制部署，多存储后端，魔数检测，URL 签名，TTL 自动清理。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2322d3ee'/><text x='16' y='22' font-size='20' text-anchor='middle' fill='%230a0e17' font-family='monospace' font-weight='bold'>UB</text></svg>">
 <script src="/analytics.js" defer></script><!-- 引入统计代码 -->
@@ -22,7 +22,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "UploadBroker",
+  "name": "uploadbroker",
   "description": "轻量级 AI 临时文件资源代理网关。专为 AI 推理平台的临时文件上传、读取与生命周期管理设计。多存储后端（Local / S3 / OSS / R2），安全防护（魔数检测 + URL 签名 + TTL），单二进制部署。",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Linux, macOS, Windows",
@@ -162,7 +162,7 @@ footer a:hover{color:var(--accent);text-decoration:none}
     <p>轻量级资源代理网关 —— 专为 AI 推理平台的临时文件上传、读取与生命周期管理设计。不重新发明存储，而是做现有存储（Local / S3 / R2 / OSS）的统一安全外壳。</p>
     <p style="color:var(--accent);font-weight:700;font-size:clamp(1.1rem,2.2vw,1.4rem);margin-top:-12px">它就是临时存储界的 <span style="background:linear-gradient(135deg,#22d3ee,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Redis</span>。</p>
     <div class="hero-actions">
-      <a href="https://github.com/doc-war/UploadBroker" class="btn btn-primary" target="_blank" rel="noopener">
+      <a href="https://github.com/doc-war/uploadbroker" class="btn btn-primary" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
         GitHub
       </a>
@@ -175,7 +175,7 @@ footer a:hover{color:var(--accent);text-decoration:none}
   <div class="container">
     <div class="section-label text-center">Positioning</div>
     <h2 class="text-center">不重新发明存储，重新设计<em>接入方式</em></h2>
-    <p class="text-center" style="margin:0 auto 40px">UploadBroker 不做底层存储——它在存储的前面充当统一的安全代理层。</p>
+    <p class="text-center" style="margin:0 auto 40px">uploadbroker 不做底层存储——它在存储的前面充当统一的安全代理层。</p>
 
     <div class="cards" style="grid-template-columns:1fr 1fr;max-width:800px;margin:0 auto">
       <div class="card">
@@ -202,7 +202,7 @@ footer a:hover{color:var(--accent);text-decoration:none}
   <div class="container">
     <div class="section-label text-center">FAQ</div>
     <h2 class="text-center">为什么不直接用主流框架？</h2>
-    <p class="text-center" style="margin:0 auto 40px">UploadBroker 不做底层存储，而是在上层提供统⼀的安全代理层。以下对比帮你理解它跟主流存储方案的本质区别。</p>
+    <p class="text-center" style="margin:0 auto 40px">uploadbroker 不做底层存储，而是在上层提供统⼀的安全代理层。以下对比帮你理解它跟主流存储方案的本质区别。</p>
 
     <div class="faq-tabs" id="faqTabs">
       <button class="faq-tab active" data-tab="minio">MinIO</button>
@@ -214,13 +214,13 @@ footer a:hover{color:var(--accent);text-decoration:none}
 
     <div class="faq-content active" id="faqMinio">
       <h4>MinIO 已经是 S3 兼容的对象存储了，为什么还要套一层 Broker？</h4>
-      <p><span class="tag tag-blue">底层存储</span> MinIO 定位是完整的对象存储系统，而 <strong>UploadBroker 定位是资源代理网关</strong>，它们解决的是不同层次的问题。</p>
+      <p><span class="tag tag-blue">底层存储</span> MinIO 定位是完整的对象存储系统，而 <strong>uploadbroker 定位是资源代理网关</strong>，它们解决的是不同层次的问题。</p>
       <ul>
         <li><strong>MinIO</strong>：持久化存储海量数据，面向长期存储场景（年级生命周期），需要维护集群、配置桶策略和 Presigned URL 权限</li>
-        <li><strong>UploadBroker</strong>：管理 AI 推理产生的<strong>临时文件</strong>（1~24h TTL），自动清理过期资源，统一安全层（魔数检测 + URL 签名 + 扩展名校验），存储后端对业务透明</li>
+        <li><strong>uploadbroker</strong>：管理 AI 推理产生的<strong>临时文件</strong>（1~24h TTL），自动清理过期资源，统一安全层（魔数检测 + URL 签名 + 扩展名校验），存储后端对业务透明</li>
       </ul>
       <p>MinIO 的 Presigned URL 暴露了桶路径和权限模型，而 <strong>Broker 的 URL 零信任</strong>——Platform 只需拿到标准 URL，不需要知道底层是 MinIO、OSS 还是本地磁盘。切换存储后端时上层零改动。</p>
-      <p style="margin-top:16px;padding:12px 16px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--accent)"><strong>一句话总结</strong>：MinIO 是做存储的，UploadBroker 是做安全的——它始终站在存储的前面，充当统一的安全代理。</p>
+      <p style="margin-top:16px;padding:12px 16px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--accent)"><strong>一句话总结</strong>：MinIO 是做存储的，uploadbroker 是做安全的——它始终站在存储的前面，充当统一的安全代理。</p>
     </div>
 
     <div class="faq-content" id="faqSeaweedfs">
@@ -228,11 +228,11 @@ footer a:hover{color:var(--accent);text-decoration:none}
       <p><span class="tag tag-blue">底层存储</span> SeaweedFS 是一个功能丰富的分布式文件存储，适合大规模持久化数据场景。</p>
       <ul>
         <li><strong>SeaweedFS</strong>：Master + Volume 架构，运维成本高，<strong>无原生短 TTL 机制</strong>，过期清理需外部脚本来做</li>
-        <li><strong>UploadBroker</strong>：单二进制，<strong>0 运维</strong>，内建秒级 TTL 清理，底层存储只负责读写，生命周期由 Broker 统一管理</li>
+        <li><strong>uploadbroker</strong>：单二进制，<strong>0 运维</strong>，内建秒级 TTL 清理，底层存储只负责读写，生命周期由 Broker 统一管理</li>
       </ul>
       <p>SeaweedFS 的 FUSE 挂载功能对 AI 训练场景有价值，但对于 <strong>API 驱动的临时文件读写</strong>（推理服务的输出图片、语音、PDF），Broker 更轻量、更聚焦。</p>
       <p>Broker 甚至可以<strong>以 SeaweedFS 为底层存储</strong>（通过 S3 兼容接口），在其上叠加安全、TTL 和路由能力。</p>
-      <p style="margin-top:16px;padding:12px 16px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--accent)"><strong>一句话总结</strong>：SeaweedFS 是通用分布式文件系统，UploadBroker 是专为 API 临时文件场景设计的轻量资源代理。</p>
+      <p style="margin-top:16px;padding:12px 16px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--accent)"><strong>一句话总结</strong>：SeaweedFS 是通用分布式文件系统，uploadbroker 是专为 API 临时文件场景设计的轻量资源代理。</p>
     </div>
 
     <div class="faq-content" id="faqCeph">
@@ -240,11 +240,11 @@ footer a:hover{color:var(--accent);text-decoration:none}
       <p><span class="tag tag-orange">基础设施</span> Ceph 是重量级的企业级分布式存储，提供块、文件、对象三种接口。</p>
       <ul>
         <li><strong>Ceph</strong>：部署复杂（MON/MGR/OSD/MDS），运维门槛极高，适合大规模持久化存储（PB 级）</li>
-        <li><strong>UploadBroker</strong>：单二进制，开箱即用，适合 <strong>AI 推理场景中高频产生、短生命周期的临时文件</strong></li>
+        <li><strong>uploadbroker</strong>：单二进制，开箱即用，适合 <strong>AI 推理场景中高频产生、短生命周期的临时文件</strong></li>
       </ul>
       <p>Ceph 在超大规模集群中表现出色，但 AI 推理场景的临时文件管理需求是：<strong>上传 → 消费 → 过期清理</strong>，这个循环只需要小时级存在。用 Ceph 管这种临时数据是"杀鸡用牛刀"。</p>
-      <p>UploadBroker 让你以单二进制部署即可获得企业级安全防护（魔数检测、URL 签名、TTL 管理），<strong>不需要为临时文件搭建重量级分布式存储系统</strong>。</p>
-      <p style="margin-top:16px;padding:12px 16px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--accent)"><strong>一句话总结</strong>：Ceph 是为大规模持久化设计的，UploadBroker 是为临时文件场景设计的——需求层级不同。</p>
+      <p>uploadbroker 让你以单二进制部署即可获得企业级安全防护（魔数检测、URL 签名、TTL 管理），<strong>不需要为临时文件搭建重量级分布式存储系统</strong>。</p>
+      <p style="margin-top:16px;padding:12px 16px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--accent)"><strong>一句话总结</strong>：Ceph 是为大规模持久化设计的，uploadbroker 是为临时文件场景设计的——需求层级不同。</p>
     </div>
 
     <div class="faq-content" id="faqGarage">
@@ -252,11 +252,11 @@ footer a:hover{color:var(--accent);text-decoration:none}
       <p><span class="tag tag-green">轻量存储</span> Garage 是一个优秀的轻量级 S3 兼容对象存储，部署简单，适合自托管场景。</p>
       <ul>
         <li><strong>Garage</strong>：轻量的底层存储节点，<strong>专注于数据持久化和复制</strong>，但缺少资源生命周期管理和安全防护层</li>
-        <li><strong>UploadBroker</strong>：在存储之上提供 <strong>完整的安全链</strong>——魔数检测、扩展名校验、URL 签名、HMAC 鉴权、Salt 轮换</li>
+        <li><strong>uploadbroker</strong>：在存储之上提供 <strong>完整的安全链</strong>——魔数检测、扩展名校验、URL 签名、HMAC 鉴权、Salt 轮换</li>
       </ul>
-      <p>如果把 Garage 和 UploadBroker 放在一起看：Garage 是做<strong>后端存储</strong>的，Broker 是做<strong>前端安全代理</strong>的。它们<strong>完美互补</strong>——你可以用 Garage 当底层，Broker 当接入层。</p>
-      <p>UploadBroker 的独特价值在于：<strong>存储后端的可替换性</strong>——今天用 Garage，明天切 MinIO，后天切阿里云 OSS，Platform 端的 API 和 URL 格式零变化。</p>
-      <p style="margin-top:16px;padding:12px 16px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--accent)"><strong>一句话总结</strong>：Garage 和 UploadBroker 不是替代关系，而是互补关系——Garage 管存储，Broker 管安全与生命周期。</p>
+      <p>如果把 Garage 和 uploadbroker 放在一起看：Garage 是做<strong>后端存储</strong>的，Broker 是做<strong>前端安全代理</strong>的。它们<strong>完美互补</strong>——你可以用 Garage 当底层，Broker 当接入层。</p>
+      <p>uploadbroker 的独特价值在于：<strong>存储后端的可替换性</strong>——今天用 Garage，明天切 MinIO，后天切阿里云 OSS，Platform 端的 API 和 URL 格式零变化。</p>
+      <p style="margin-top:16px;padding:12px 16px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--accent)"><strong>一句话总结</strong>：Garage 和 uploadbroker 不是替代关系，而是互补关系——Garage 管存储，Broker 管安全与生命周期。</p>
     </div>
 
     <div class="faq-content" id="faqRustfs">
@@ -264,18 +264,18 @@ footer a:hover{color:var(--accent);text-decoration:none}
       <p><span class="tag tag-red">新兴存储</span> RustFS 以高性能和内存安全著称，适合 IO 密集型场景。</p>
       <ul>
         <li><strong>RustFS</strong>：专注于底层存储性能和一致性，适合高频读写场景，<strong>但缺少针对 AI 临时文件场景的业务抽象</strong></li>
-        <li><strong>UploadBroker</strong>：专注 <strong>AI 推理工作流</strong>——图生图输出 PNG、语音转文字输出 WAV/MP3、视频处理输出 MP4，每个文件天然小时级 TTL</li>
+        <li><strong>uploadbroker</strong>：专注 <strong>AI 推理工作流</strong>——图生图输出 PNG、语音转文字输出 WAV/MP3、视频处理输出 MP4，每个文件天然小时级 TTL</li>
       </ul>
-      <p>RustFS 的存储性能优势在底层，但 UploadBroker 的价值在<strong>上层业务逻辑</strong>：内容寻址、MIME 安全洗牌、多存储路由、自动过期清理。Broker 甚至可以用 RustFS 作为底层后端。</p>
-      <p>性能并非 AI 临时文件管理的瓶颈——通常单机就能承载推理节点的输出流量。真正的痛点是：<strong>安全防护、过期管理和存储切换的灵活性</strong>，这正是 UploadBroker 的核心能力。</p>
-      <p style="margin-top:16px;padding:12px 16px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--accent)"><strong>一句话总结</strong>：RustFS 优化的是存储性能，UploadBroker 优化的是业务安全与灵活性——不同层次的差异化价值。</p>
+      <p>RustFS 的存储性能优势在底层，但 uploadbroker 的价值在<strong>上层业务逻辑</strong>：内容寻址、MIME 安全洗牌、多存储路由、自动过期清理。Broker 甚至可以用 RustFS 作为底层后端。</p>
+      <p>性能并非 AI 临时文件管理的瓶颈——通常单机就能承载推理节点的输出流量。真正的痛点是：<strong>安全防护、过期管理和存储切换的灵活性</strong>，这正是 uploadbroker 的核心能力。</p>
+      <p style="margin-top:16px;padding:12px 16px;background:var(--bg3);border-radius:8px;border-left:3px solid var(--accent)"><strong>一句话总结</strong>：RustFS 优化的是存储性能，uploadbroker 优化的是业务安全与灵活性——不同层次的差异化价值。</p>
     </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="section-label text-center">Why UploadBroker</div>
+    <div class="section-label text-center">Why uploadbroker</div>
     <h2 class="text-center">三大核心开源价值</h2>
     <p class="text-center" style="margin:0 auto 48px">不是又一个对象存储，而是 AI 推理时代的资源代理基础设施。</p>
 
@@ -283,7 +283,7 @@ footer a:hover{color:var(--accent);text-decoration:none}
       <div class="card">
         <div class="card-icon">⚡</div>
         <h3>AI 推理时代的刚需基础设施</h3>
-        <p>首个为AI中间件服务的文件Broker。推理场景中，临时图片、PDF、语音、视频文件高速流转。UploadBroker 填补了"AI 临时文件生命周期管理"的空白 —— 就像存储界的 Redis，专注缓存、临时、高性能，而非底层持久化。</p>
+        <p>首个为AI中间件服务的文件Broker。推理场景中，临时图片、PDF、语音、视频文件高速流转。uploadbroker 填补了"AI 临时文件生命周期管理"的空白 —— 就像存储界的 Redis，专注缓存、临时、高性能，而非底层持久化。</p>
       </div>
       <div class="card">
         <div class="card-icon">🧱</div>
@@ -316,7 +316,7 @@ footer a:hover{color:var(--accent);text-decoration:none}
         </div>
         <div class="step">
           <span class="step-num">2</span>
-          <div><p>编写配置 <code>uploadBroker.yaml</code></p></div>
+          <div><p>编写配置 <code>uploadbroker.yaml</code></p></div>
         </div>
         <div class="step">
           <span class="step-num">3</span>
@@ -334,7 +334,7 @@ footer a:hover{color:var(--accent);text-decoration:none}
 
       <div>
         <div class="code-block">
-          <pre><span class="cm"># uploadBroker.yaml</span>
+          <pre><span class="cm"># uploadbroker.yaml</span>
 <span class="tag">listen</span>: <span class="num">127.0.0.1:9001</span>
 <span class="tag">base_url</span>: <span class="str">https://upload.example.com</span>
 <span class="tag">url_blake2b_salts</span>:
@@ -352,7 +352,7 @@ footer a:hover{color:var(--accent);text-decoration:none}
         </div>
 
         <div class="code-block" style="margin-top:12px">
-          <pre>$ <span class="kw">./uploadBroker</span>
+          <pre>$ <span class="kw">./uploadbroker</span>
 $ <span class="kw">curl</span> -F <span class="str">"file=@photo.png"</span> <span class="str">"http://127.0.0.1:9001/v1/upload"</span>
 {<span class="str">"code"</span>:<span class="num">0</span>,<span class="str">"data"</span>:{<span class="str">"url"</span>:<span class="str">"https://..."</span>,<span class="str">"mimeType"</span>:<span class="str">"image/png"</span>}}
 $ <span class="kw">curl</span> <span class="str">"https://upload.example.com/tmp/..."</span> <span class="cm"># 读取文件</span></pre>
@@ -364,9 +364,9 @@ $ <span class="kw">curl</span> <span class="str">"https://upload.example.com/tmp
 
 <footer>
   <div class="container">
-    <div class="left">UploadBroker &middot; MIT License</div>
+    <div class="left">uploadbroker &middot; MIT License</div>
     <div class="right">
-      <a href="https://github.com/doc-war/UploadBroker" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/doc-war/uploadbroker" target="_blank" rel="noopener">GitHub</a>
       <a href="#" style="display:inline-flex;align-items:center;gap:4px">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
         回到顶部

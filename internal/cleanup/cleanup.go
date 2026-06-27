@@ -5,9 +5,9 @@ import (
 	"log"
 	"time"
 
-	"uploadBroker/internal/config"
-	"uploadBroker/internal/metadata"
-	"uploadBroker/internal/storage"
+	"github.com/doc-war/uploadbroker/internal/config"
+	"github.com/doc-war/uploadbroker/internal/metadata"
+	"github.com/doc-war/uploadbroker/internal/storage"
 )
 
 type Task struct {

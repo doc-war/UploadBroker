@@ -8,11 +8,11 @@ import (
 	"strconv"
 	"time"
 
-	"uploadBroker/internal/config"
-	"uploadBroker/internal/hash"
-	"uploadBroker/internal/metadata"
-	"uploadBroker/internal/mime"
-	"uploadBroker/internal/storage"
+	"github.com/doc-war/uploadbroker/internal/config"
+	"github.com/doc-war/uploadbroker/internal/hash"
+	"github.com/doc-war/uploadbroker/internal/metadata"
+	"github.com/doc-war/uploadbroker/internal/mime"
+	"github.com/doc-war/uploadbroker/internal/storage"
 )
 
 type UploadHandler struct {

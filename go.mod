@@ -1,4 +1,4 @@
-module uploadBroker
+module github.com/doc-war/uploadbroker
 
 go 1.25.3
 

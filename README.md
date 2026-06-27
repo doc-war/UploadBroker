@@ -5,26 +5,26 @@
 它就是临时存储界的 Redis。
 
 ```text
-Client →  UploadBroker → Local / S3 / OSS / R2
+Client →  uploadbroker → Local / S3 / OSS / R2
 ```
 
 或
 
 ```text
-Client → Platform (认证/授权) → UploadBroker → Local / S3 / OSS / R2
+Client → Platform (认证/授权) → uploadbroker → Local / S3 / OSS / R2
 ```
 
 ## 快速开始
 
 ```bash
 # 编译
-go build -o uploadBroker
+go build -o uploadbroker
 
 # 运行（使用默认 config）
-./uploadBroker
+./uploadbroker
 
 # 指定配置文件
-./uploadBroker --config=/path/to/config.yaml
+./uploadbroker --config=/path/to/config.yaml
 ```
 
 ## API
@@ -172,7 +172,7 @@ storage:
 
 ```
 ├── main.go                    # 入口：配置加载、驱动初始化、启动
-├── uploadBroker.yaml          # 默认配置
+├── uploadbroker.yaml          # 默认配置
 ├── internal/
 │   ├── api/                   # HTTP handlers（upload / read / health）
 │   ├── config/                # YAML 配置解析

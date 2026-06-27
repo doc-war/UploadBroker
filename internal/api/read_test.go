@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"uploadBroker/internal/config"
-	"uploadBroker/internal/hash"
-	"uploadBroker/internal/metadata"
-	"uploadBroker/internal/storage"
+	"github.com/doc-war/uploadbroker/internal/config"
+	"github.com/doc-war/uploadbroker/internal/hash"
+	"github.com/doc-war/uploadbroker/internal/metadata"
+	"github.com/doc-war/uploadbroker/internal/storage"
 )
 
 func setupReadTest(t *testing.T) (*config.Config, *metadata.Store, map[string]storage.Storage, *ReadHandler) {

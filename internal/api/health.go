@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"time"
 
-	"uploadBroker/internal/metadata"
-	"uploadBroker/internal/storage"
+	"github.com/doc-war/uploadbroker/internal/metadata"
+	"github.com/doc-war/uploadbroker/internal/storage"
 )
 
 type HealthHandler struct {

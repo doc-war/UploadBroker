@@ -5,9 +5,9 @@ import (
 	"net"
 	"net/http"
 
-	"uploadBroker/internal/config"
-	"uploadBroker/internal/metadata"
-	"uploadBroker/internal/storage"
+	"github.com/doc-war/uploadbroker/internal/config"
+	"github.com/doc-war/uploadbroker/internal/metadata"
+	"github.com/doc-war/uploadbroker/internal/storage"
 )
 
 func StartServer(cfg *config.Config, store *metadata.Store, drivers map[string]storage.Storage) (net.Listener, http.Handler, error) {
