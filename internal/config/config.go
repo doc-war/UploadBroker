@@ -69,6 +69,13 @@ type DriverConfig struct {
 func Load(path string) (*Config, error) {
 	data, err := os.ReadFile(path)
 	if err != nil {
+		if os.IsNotExist(err) {
+			cfg := &Config{}
+			if err := cfg.fillDefaults(); err != nil {
+				return nil, err
+			}
+			return cfg, nil
+		}
 		return nil, fmt.Errorf("read config: %w", err)
 	}
 
@@ -85,7 +92,7 @@ func Load(path string) (*Config, error) {
 
 func (c *Config) fillDefaults() error {
 	if c.Listen == "" {
-		c.Listen = "127.0.0.1:0"
+		c.Listen = "127.0.0.1:8880"
 	}
 	if c.URLPrefix == "" {
 		c.URLPrefix = "tmp"
@@ -126,7 +133,7 @@ func (c *Config) fillDefaults() error {
 		return fmt.Errorf("at most 2 url_blake2b_salts allowed")
 	}
 	if c.BaseURL == "" {
-		return fmt.Errorf("base_url is required")
+		c.BaseURL = "http://localhost"
 	}
 	return nil
 }

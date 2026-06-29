@@ -41,7 +41,7 @@ base_url: https://your-domain.com
 ### 完整配置示例
 
 ```yaml
-listen: 127.0.0.1:9001
+listen: 127.0.0.1:8880
 base_url: https://upload.example.com
 url_blake2b_salts:
   - current-salt
@@ -83,7 +83,7 @@ uploadbroker --config ./uploadbroker.yaml
 启动后，调用健康检查端点确认服务就绪：
 
 ```bash
-curl http://127.0.0.1:9001/v1/health
+curl http://127.0.0.1:8880/v1/health
 ```
 
 预期返回 HTTP 200：
@@ -97,7 +97,7 @@ curl http://127.0.0.1:9001/v1/health
 ## 上传资源
 
 ```bash
-curl -X POST http://127.0.0.1:9001/v1/upload \
+curl -X POST http://127.0.0.1:8880/v1/upload \
   -F "file=@photo.png"
 ```
 
@@ -149,18 +149,20 @@ URL 由 Broker 签发，自带过期时间和签名校验，直接可读。
 
 ## 配置参考
 
+整个yaml配置文件是可选的，所有选项均可选
+
 ### 顶层配置
 
-| 字段 | 类型 | 必需 | 默认值 | 说明 |
-|------|------|------|--------|------|
-| `listen` | 字符串 | 否 | `127.0.0.1:0` | 监听地址。`:0` 表示随机端口，实际端口写入 `.port` 文件 |
-| `base_url` | 字符串 | **是** | — | 构建签名 URL 的基础地址，如 `https://upload.example.com` |
-| `url_blake2b_salts` | 字符串数组 | 否 | — | BLAKE2b 签名盐值列表。`salts[0]` 用于新签名，旧盐值保留可继续验证 |
-| `url_prefix` | 字符串 | 否 | `tmp` | URL 路径前缀，对应 `GET /{prefix}/{expire}/...` |
-| `metadata_db` | 字符串 | 否 | `./data/broker.db` | SQLite 元数据库路径（WAL 模式） |
-| `cleanup_interval` | 持续时间 | 否 | `10m` | 过期文件清理周期，格式如 `10m`、`1h` |
-| `default_ttl` | 持续时间 | 否 | `24h` | 新文件默认有效期，格式如 `24h`、`30m` |
-| `hmac_secret` | 字符串 | 否 | `""` | HMAC 签名密钥。留空则**禁用**上传 HMAC 校验 |
+| 字段 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| `listen` | 字符串 | `127.0.0.1:0` | 监听地址。`:0` 表示随机端口，实际端口写入 `.port` 文件 |
+| `base_url` | 字符串 | http://localhost | 构建签名 URL 的基础地址，如 `https://upload.example.com` |
+| `url_blake2b_salts` | 字符串数组 | "" | BLAKE2b 签名盐值列表。`salts[0]` 用于新签名，旧盐值保留可继续验证 |
+| `url_prefix` | 字符串 | `tmp` | URL 路径前缀，对应 `GET /{prefix}/{expire}/...` |
+| `metadata_db` | 字符串 | `./data/broker.db` | SQLite 元数据库路径（WAL 模式） |
+| `cleanup_interval` | 持续时间 | `10m` | 过期文件清理周期，格式如 `10m`、`1h` |
+| `default_ttl` | 持续时间 | `24h` | 新文件默认有效期，格式如 `24h`、`30m` |
+| `hmac_secret` | 字符串 | `""` | HMAC 签名密钥。留空则**禁用**上传 HMAC 校验 |
 
 ### 文件大小限制（`limits`）
 

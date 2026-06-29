@@ -73,7 +73,7 @@ timestamp: <unix> (可选)
 ## 配置
 
 ```yaml
-listen: 127.0.0.1:9001                # 监听地址，端口传0表示自动选择空闲端口
+listen: 127.0.0.1:8880                # 监听地址，端口传0表示自动选择空闲端口
 base_url: https://upload.example.com  # 注入对外资源 URL 前缀（必填）（部署环境依赖）
 url_blake2b_salts:                    # URL 签名盐值（最多 2 个，省略则使用空盐）
   - current-salt

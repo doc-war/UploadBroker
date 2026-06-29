@@ -19,6 +19,7 @@ func writeConfig(t *testing.T, content string) string {
 
 func TestLoadMinimal(t *testing.T) {
 	yaml := `
+listen: 127.0.0.1:0
 base_url: https://upload.example.com
 url_blake2b_salts:
   - my-salt
@@ -138,9 +139,12 @@ storage:
 func TestLoadMissingBaseURL(t *testing.T) {
 	yaml := `url_blake2b_salts: ["salt"]`
 	path := writeConfig(t, yaml)
-	_, err := Load(path)
-	if err == nil {
-		t.Fatal("expected error for missing base_url")
+	cfg, err := Load(path)
+	if err != nil {
+		t.Fatalf("Load: %v", err)
+	}
+	if cfg.BaseURL != "http://localhost" {
+		t.Fatalf("BaseURL = %s, want http://localhost", cfg.BaseURL)
 	}
 }
 
@@ -172,9 +176,15 @@ url_blake2b_salts:
 }
 
 func TestLoadFileNotFound(t *testing.T) {
-	_, err := Load("/nonexistent/path/broker.yaml")
-	if err == nil {
-		t.Fatal("expected error for nonexistent file")
+	cfg, err := Load("/nonexistent/path/broker.yaml")
+	if err != nil {
+		t.Fatalf("Load: %v", err)
+	}
+	if cfg.Listen != "127.0.0.1:8880" {
+		t.Fatalf("Listen = %s, want 127.0.0.1:8880", cfg.Listen)
+	}
+	if cfg.BaseURL != "http://localhost" {
+		t.Fatalf("BaseURL = %s, want http://localhost", cfg.BaseURL)
 	}
 }
 
